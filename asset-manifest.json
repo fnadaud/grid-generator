@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/grid-generator/static/css/main.852ccd90.chunk.css",
+    "main.js": "/grid-generator/static/js/main.3ebcb0e0.chunk.js",
+    "main.js.map": "/grid-generator/static/js/main.3ebcb0e0.chunk.js.map",
+    "runtime~main.js": "/grid-generator/static/js/runtime~main.eb1b6651.js",
+    "runtime~main.js.map": "/grid-generator/static/js/runtime~main.eb1b6651.js.map",
+    "static/js/2.fc925a4e.chunk.js": "/grid-generator/static/js/2.fc925a4e.chunk.js",
+    "static/js/2.fc925a4e.chunk.js.map": "/grid-generator/static/js/2.fc925a4e.chunk.js.map",
+    "index.html": "/grid-generator/index.html",
+    "precache-manifest.3ed09c2ac1ccb97b01d21d3a1cd5ee28.js": "/grid-generator/precache-manifest.3ed09c2ac1ccb97b01d21d3a1cd5ee28.js",
+    "service-worker.js": "/grid-generator/service-worker.js",
+    "static/css/main.852ccd90.chunk.css.map": "/grid-generator/static/css/main.852ccd90.chunk.css.map",
+    "static/media/logo.svg": "/grid-generator/static/media/logo.5d5d9eef.svg"
+  }
+}
