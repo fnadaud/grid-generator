@@ -10,8 +10,8 @@ class App extends Component {
     super();
     this.displayedScale = 2;
     this.state = {
-      columns: 1,
-      rows: 1,
+      columns: 3,
+      rows: 4,
       width: 210 * this.displayedScale,
       height: 297 * this.displayedScale,
       margin: 15 * this.displayedScale,
@@ -20,6 +20,10 @@ class App extends Component {
     this.margin = 15 * this.scale;
     this.width = 210 * this.scale;
     this.height = 297 * this.scale;
+  }
+
+  componentDidMount() {
+    this.draw();
   }
 
   draw() {
@@ -91,22 +95,38 @@ class App extends Component {
   // Generate PDF
     doc.addImage(imgData, 'PNG', 0, 0, 210, 297);
     // doc.text('Hello world!', 10, 10)
-    doc.save('a4.pdf')
+    doc.save('grille_a4.pdf')
   }
 
   handleChange = name => event => {
-    this.setState({[name]: event.target.value});
+    if(event.target.value > 100){
+      this.setState({[name]: 100});
+    } else if (event.target.value < 1) {
+      this.setState({[name]: 1});
+    } else {
+      this.setState({[name]: event.target.value});
+    }
   }
   
   render() {
     this.draw();
     return (
-      <div className="App">
-        <button onClick={this.exportToPdf}>Exporter en pdf</button>
-        <input type="number" value={this.state.columns} onChange={this.handleChange('columns')} />
-        <input type="number" value={this.state.rows} onChange={this.handleChange('rows')}/>
-        <canvas id="displayCanvas" width={210 * this.displayedScale} height={297 * this.displayedScale}></canvas>
-        <canvas id="exportCanvas" width={210 * this.scale} height={297 * this.scale} style={{position: 'absolute', opacity: 0}}></canvas>
+      <div className="app">
+        <div className="title-container">
+          <h1>Générateur de grilles pour</h1>
+          <h1 className="big-title">Emelyne</h1>
+        </div>
+        <div className="input-container">
+          <label style={{marginRight: 20}}>
+            Colonnes : <input type="number" value={this.state.columns} onChange={this.handleChange('columns')} />
+          </label>
+          <label>
+            Lignes : <input type="number" value={this.state.rows} onChange={this.handleChange('rows')}/>
+          </label>
+        </div>
+        <button onClick={this.exportToPdf} className="button">Exporter en pdf</button>
+        <canvas id="displayCanvas" className="canvas displayed-canvas" width={210 * this.displayedScale} height={297 * this.displayedScale}></canvas>
+        <canvas id="exportCanvas" className="canvas" width={210 * this.scale} height={297 * this.scale} style={{position: 'absolute', opacity: 0}}></canvas>
       </div>
     );
   }
