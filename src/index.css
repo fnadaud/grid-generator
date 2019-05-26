@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #f4fcff;
+  background: rgb(202, 163, 136);
   overflow: hidden;
 }
 
@@ -54,8 +54,9 @@ code {
   align-items: center;
   height: 100vh;
   left: 0px;
-  background: white;
+  background: rgb(241, 241, 241);
   border-right: solid 1px #e0e0e0;
+  box-shadow: 2px 0px 10px 0px rgba(0,0,0,0.3);
 }
 
 .drawer-title {
@@ -88,8 +89,19 @@ code {
   text-align: center;
 }
 
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  transform: scale(1.5);
+  margin-left: 8px;
+  width: 32px;
+}
+
 .color-container {
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 
 .color-row {
@@ -106,7 +118,6 @@ code {
   height: 30px;
   border-radius: 5px;
   cursor: pointer;
-  position: relative;
 }
 
 .color-picker {
@@ -135,4 +146,10 @@ button:focus, input:focus {
   border-radius: 5px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.divider {
+  margin: 20px -20px;
+  height: 1px;
+  background: #e0e0e0;
 }

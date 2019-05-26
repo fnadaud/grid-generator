@@ -35,9 +35,11 @@ class Drawer extends Component {
               <input className="input" type="number" value={rows} onChange={handleChange('rows')}/>
             </div>
           </div>
+          <div className="divider"/>
           <div className="color-container">
             <div className="color-row">
-              <div className="color-square" style={{ background: outsideColor }} onClick={() => this.handlePickerDisplay()}>
+              <div style={{position: "relative"}}>
+                <div className="color-square" style={{ background: outsideColor }} onClick={() => this.handlePickerDisplay()}/>
                 <ChromePicker
                   className={"color-picker" + (this.state.displayOutsidePicker ? "" : " hidden")}
                   color={outsideColor}
@@ -47,7 +49,8 @@ class Drawer extends Component {
               <label className="label">Couleur extérieure</label>
             </div>
             <div className="color-row">
-              <div className="color-square" style={{background: insideColor}} onClick={() => this.handlePickerDisplay(true)}>
+              <div style={{ position: "relative" }}>
+                <div className="color-square" style={{background: insideColor}} onClick={() => this.handlePickerDisplay(true)}/>
                 <ChromePicker
                   className={"color-picker" + (this.state.displayInsidePicker ? "" : " hidden")}
                   color={insideColor}
@@ -57,6 +60,11 @@ class Drawer extends Component {
               <label className="label">Couleur intérieure</label>
             </div>
           </div>
+          {/* <div className="divider" />
+          <div className="checkbox-container">
+            <input className="checkbox" type="checkbox" value={rows} onChange={handleChange('rows')} />
+            <label className="label">Numéros de ligne/colonne</label>
+          </div> */}
         </div>
         <button onClick={exportToPdf} className="button">Exporter en pdf</button>
       </div>
