@@ -10,8 +10,8 @@ class App extends Component {
     super();
     this.displayedScale = (window.innerHeight - 40)/297;
     this.state = {
-      columns: 3,
-      rows: 4,
+      columns: 15,
+      rows: 20,
       width: 210 * this.displayedScale,
       height: 297 * this.displayedScale,
       margin: 15 * this.displayedScale,

@@ -60,11 +60,6 @@ class Drawer extends Component {
               <label className="label">Couleur intérieure</label>
             </div>
           </div>
-          {/* <div className="divider" />
-          <div className="checkbox-container">
-            <input className="checkbox" type="checkbox" value={rows} onChange={handleChange('rows')} />
-            <label className="label">Numéros de ligne/colonne</label>
-          </div> */}
         </div>
         <button onClick={exportToPdf} className="button">Exporter en pdf</button>
       </div>
